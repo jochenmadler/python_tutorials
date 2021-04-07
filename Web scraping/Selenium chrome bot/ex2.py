@@ -16,14 +16,14 @@ driver.get("https://www.zeit.de/index")
 
 try:
     # click consent to ads
-    time.sleep(2)
-    consent_button = WebDriverWait(driver,200).until(
+    time.sleep(2) # no clue why we need this?
+    consent_button = WebDriverWait(driver,10).until(
         EC.presence_of_element_located((By.ID,"sp_message_container_446139")))
     consent_button.click()
 
     # click close paywall ad
     time.sleep(2)
-    closePaywall_button = WebDriverWait(driver,200).until(
+    closePaywall_button = WebDriverWait(driver,10).until(
         EC.presence_of_element_located((By.CLASS_NAME,"paywall-footer__btn-close")))
     closePaywall_button.click()
 
@@ -35,7 +35,7 @@ try:
 
     # get resulting articles
     time.sleep(1)
-    main = WebDriverWait(driver,100).until(
+    main = WebDriverWait(driver,10).until(
         EC.presence_of_element_located((By.ID,"main")))
     articles = main.find_elements_by_tag_name("article")
 

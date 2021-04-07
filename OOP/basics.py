@@ -25,4 +25,3 @@ doggo2 = Dog("Kimba", 4)
 
 doggo1.setBuddy(doggo2)
 doggo1.getBuddy()
-
